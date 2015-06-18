@@ -1,0 +1,48 @@
+/ campaign
+-$campagne = "0615_cata";
+/ KDO
+-$linkKDO  = "http://www.ideeshomme.fr/fr/animation/presentation-cadeaux.aspx";
+-$ancreCmc = "#ctl00_ContentPlaceHolder1_RepeatNiveau_cadeau_ctl00_LAB_PRIVILEGE_COMMANDE";
+/ liens ligne1 pck1-2-3sur3
+-$l1link_pck1sur3 = "http://www.ideeshomme.fr/fr/maison/bureau/lampe-col-cygne-14-led/6490353.html";
+-$l1link_pck2sur3 = "http://www.ideeshomme.fr/fr/bricolage-jardin-voiture/jardin/serre-potager/6494355.html";
+-$l1link_pck3sur3 = "http://www.ideeshomme.fr/fr/bricolage-jardin-voiture/jardin/spray-renov-plastique-bois-500-ml-recharge-500-ml/6497358.html";
+/ liens ligne1 pck1-2sur2
+-$l1link_pck1sur2  = "http://www.ideeshomme.fr/fr/bricolage-jardin-voiture/jardin/nettoie-pierre-500-ml/3027356.html";
+-$l1link_pck2sur2  = "http://www.ideeshomme.fr/fr/mode/pret-a-porter-homme/gilet-sans-manches-patchwork-taille-m/2375350.html";
+/ lien btn global pck
+-$linkGlobalPckBtn = "http://www.ideeshomme.fr/fr/index.aspx";
+/ mentions
+-$linkLegalUrl ="http://www.ideeshomme.fr/fr/index.aspx";
+-$linkContact  ="http://www.ideeshomme.fr/fr/idhomme_et_vous/contact.aspx";
+-$linkDesabo   ="http://www.ideeshomme.fr/fr/animation/DesinscriptionNewsletter.aspx";
+
+
+/ compil var > ne pas modifier (sauf chgmnt radical de tracking)
+- $utm    = ["?utm_source=","&utm_medium=","&utm_content=","&utm_campaign="];
+- $utmtxt = ["NL","email",$campagne];$utmcont =["pdt","btn","csoa","cmc","btnKdo","btnGlobPck","url"]
+- $utmPdt          = $utm[0]+$utmtxt[0]+$utm[1]+$utmtxt[1]+$utm[2]+$utmcont[0]+$utm[3]+$utmtxt[2];
+- $utmBtn          = $utm[0]+$utmtxt[0]+$utm[1]+$utmtxt[1]+$utm[2]+$utmcont[1]+$utm[3]+$utmtxt[2];
+- $utmCsa          = $utm[0]+$utmtxt[0]+$utm[1]+$utmtxt[1]+$utm[2]+$utmcont[2]+$utm[3]+$utmtxt[2];
+- $utmCmc          = $utm[0]+$utmtxt[0]+$utm[1]+$utmtxt[1]+$utm[2]+$utmcont[3]+$utm[3]+$utmtxt[2];
+- $utmBtnKdo       = $utm[0]+$utmtxt[0]+$utm[1]+$utmtxt[1]+$utm[2]+$utmcont[4]+$utm[3]+$utmtxt[2];
+- $utmBtnGlobPck   = $utm[0]+$utmtxt[0]+$utm[1]+$utmtxt[1]+$utm[2]+$utmcont[5]+$utm[3]+$utmtxt[2];
+- $utmLegalUrl     = $utm[0]+$utmtxt[0]+$utm[1]+$utmtxt[1]+$utm[2]+$utmcont[6]+$utm[3]+$utmtxt[2];
+- $utmLegalContact = "?val=A&utm_source=NL&utm_medium=email&utm_content=contact"+$utm[3]+$utmtxt[2];
+- $utmLegalDesabo  = "?utm_source=NL&utm_medium=email&utm_content=desabo"+$utm[3]+$utmtxt[2];
+/ link ligne1_pck1sur2 + ligne1_pck2sur2
+/ track KDO
+-$linkKDO_Csoa      = $linkKDO+$utmCsa;
+-$linkKDO_Cmc       = $linkKDO+$utmCmc+$ancreCmc;
+-$linkKDO_btn       = $linkKDO+$utmBtnKdo;
+-$linkGlobalPckBtn_ = $linkGlobalPckBtn+$utmBtnGlobPck;
+-$linkLegalUrl_     = $linkLegalUrl+$utmLegalUrl;
+-$linkContact_      = $linkContact+$utmLegalContact;
+-$linkDesabo_       = $linkDesabo+$utmLegalDesabo;
+
+/ track ligne1 pck1-2sur2
+-$l1link_pck1sur3_pdt = $l1link_pck1sur3+$utmPdt; $l1link_pck2sur3_pdt = $l1link_pck2sur3+$utmPdt; $l1link_pck3sur3_pdt = $l1link_pck3sur3+$utmPdt;
+-$l1link_pck1sur3_btn = $l1link_pck1sur3+$utmBtn; $l1link_pck2sur3_btn = $l1link_pck2sur3+$utmBtn; $l1link_pck3sur3_btn = $l1link_pck3sur3+$utmBtn;
+/ track ligne1 pck1-2sur2
+-$l1link_pck1sur2_pdt = $l1link_pck1sur2+$utmPdt; $l1link_pck2sur2_pdt = $l1link_pck2sur2+$utmPdt;
+-$l1link_pck1sur2_btn = $l1link_pck1sur2+$utmBtn; $l1link_pck2sur2_btn = $l1link_pck2sur2+$utmBtn;
